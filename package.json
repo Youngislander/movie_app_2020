@@ -25,7 +25,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage" : "https://Youngislander.github.io/movie_app_2020",
+  "homepage" : "https://clever-spence-6ef27b.netlify.app/",
   "browserslist": {
     "production": [
       ">0.2%",
