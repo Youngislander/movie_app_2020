@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   font-size : 12px;
+  margin-left : 20px;
 `
 const Image = styled.div`
   background-image:url(${props => `https://image.tmdb.org/t/p/w300${props.bgUrl}`});
@@ -36,8 +37,8 @@ const Year = styled.span`
 
 
 
-const Poster = withRouter(({id, imageUrl, title, rating, year, isMovie = false})=>(
-  <Link to={isMovie? `/movie/${id}` : `/show/${id}`}>
+const Poster = withRouter(({id, imageUrl, title, rating, year, isMovie})=>(
+  <Link to={isMovie? `/movie/${id}` : `/tv/${id}`}>
    <Container>
      <ImageContainer>
          <Image bgUrl={imageUrl ? `${imageUrl}` : require("./noPosterSmall.png")} />

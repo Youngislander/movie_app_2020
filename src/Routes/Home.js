@@ -11,6 +11,10 @@ const Container = styled.div`
   margin-left: 15px;
   color : white;
 `
+const IContainer = styled.div`
+  margin-top : 20px
+`
+
 const Item = styled.span`
   display : grid;
   grid-template-columns: repeat(auto-fill, 125px);
@@ -63,10 +67,28 @@ export default () => {
    },[])   
 return loading ? (<Loader />):(
     <Container>
+
+     <IContainer>
       <H1>Now playing</H1>
       <Item>  
         {nowPlaying.map(now=> (<Poster key={now.id} id={now.id} imageUrl={now.poster_path} title={now.original_title} rating={now.vote_average} year={now.release_date.substring(0.4)} isMovie={true} />))}
       </Item>
+     </IContainer> 
+
+     <IContainer>
+      <H1>Upcoming</H1>
+      <Item>  
+        {upComing.map(now=> (<Poster key={now.id} id={now.id} imageUrl={now.poster_path} title={now.original_title} rating={now.vote_average} year={now.release_date.substring(0.4)} isMovie={true} />))}
+      </Item>
+     </IContainer> 
+
+     <IContainer>
+      <H1>Popular</H1>
+      <Item>  
+        {popular.map(now=> (<Poster key={now.id} id={now.id} imageUrl={now.poster_path} title={now.original_title} rating={now.vote_average} year={now.release_date.substring(0.4)} isMovie={true} />))}
+      </Item>
+     </IContainer> 
+
     </Container>    
 )
 }
